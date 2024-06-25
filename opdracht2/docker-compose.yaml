@@ -31,7 +31,7 @@ services:
       context: ./frontend/
       dockerfile: ./Dockerfile
     ports:
-      - "3050:3050"
+      - "3051:3051"
     restart: always
     depends_on:
       - api
