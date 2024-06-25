@@ -5,18 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Docker Workshop</title>
 
-    <link rel="stylesheet" href="style.css">
-    <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
-    <script src="script.js"></script>
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="/static/bootstrap.css">
+    <script src="/static/jquery.js"></script>
+    <script src="/static/script.js"></script>
 </head>
 <body>
-    <div class="container">
+    <div class="container mt-8">
         <div class="row">
             <div class="col-md-12">
                 <div class="card card-white">
                     <div class="card-body">
-                        <form action="javascript:void(0);">
-                            <input type="text" class="form-control add-task" placeholder="New Task...">
+                        <form action="" class="d-flex">
+                            <input id="newTask" type="text" class="form-control add-task" placeholder="New Task...">
+                            <button class="btn btn-primary" type="button" onclick="addItem()">Add Task</button>
                         </form>
                         <ul class="nav nav-pills todo-nav">
                             <li role="presentation" class="nav-item all-task active"><a href="#" class="nav-link">All</a></li>
@@ -25,25 +27,7 @@
                         </ul>
                         <div class="todo-list">
                             <div class="todo-item">
-                                <div class="checker"><span class=""><input type="checkbox"></span></div>
-                                <span>Create theme</span>
-                                <a href="javascript:void(0);" class="float-right remove-todo-item"><i class="icon-close"></i></a>
-                            </div>
-                            <div class="todo-item">
-                                <div class="checker"><span class=""><input type="checkbox"></span></div>
-                                <span>Work on wordpress</span>
-                                <a href="javascript:void(0);" class="float-right remove-todo-item"><i class="icon-close"></i></a>
-                            </div>
-                            
-                            <div class="todo-item">
-                                <div class="checker"><span class=""><input type="checkbox"></span></div>
-                                <span>Organize office main department</span>
-                                <a href="javascript:void(0);" class="float-right remove-todo-item"><i class="icon-close"></i></a>
-                            </div>
-                            <div class="todo-item">
-                                <div class="checker"><span><input type="checkbox"></span></div>
-                                <span>Error solve in HTML template</span>
-                                <a href="javascript:void(0);" class="float-right remove-todo-item"><i class="icon-close"></i></a>
+
                             </div>
                         </div>
                     </div>
