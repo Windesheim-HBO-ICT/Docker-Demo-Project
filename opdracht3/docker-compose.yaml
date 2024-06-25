@@ -1,0 +1,35 @@
+version: "3.8"
+
+services:
+  chatterbox:
+    build:
+        context: ./chatterbox/chatterbox/
+        dockerfile: ./Dockerfile
+    ports:
+      - "8080:8080"
+      - "8081:8081"
+    restart: always
+    develop:
+      watch:
+        - action: rebuild
+          path: ./chatterbox/
+    volumes:
+      - logs:/app/logs
+
+  loglens:
+    build:
+      context: ./loglens/loglens/
+      dockerfile: ./Dockerfile
+    ports:
+      - "9090:8080"
+      - "9091:8081"
+    restart: always
+    develop:
+      watch:
+        - action: rebuild
+          path: ./loglens/
+    volumes:
+      - logs:/app/logs
+
+volumes:
+  logs: 
