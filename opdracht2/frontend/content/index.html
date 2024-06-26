@@ -11,24 +11,19 @@
     <script src="/static/script.js"></script>
 </head>
 <body>
-    <div class="container mt-8">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="card card-white">
-                    <div class="card-body">
-                        <form action="" class="d-flex">
-                            <input id="newTask" type="text" class="form-control add-task" placeholder="New Task...">
-                            <button class="btn btn-primary" type="button" onclick="addItem()">Add Task</button>
-                        </form>
-                        <ul class="nav nav-pills todo-nav">
-                            <li role="presentation" class="nav-item all-task active"><a href="#" class="nav-link">All</a></li>
-                            <li role="presentation" class="nav-item active-task"><a href="#" class="nav-link">Active</a></li>
-                            <li role="presentation" class="nav-item completed-task"><a href="#" class="nav-link">Completed</a></li>
-                        </ul>
-                        <div class="todo-list">
-                            <div class="todo-item">
+    <div class="text-center">
+        <h1 class="display-4">Docker Workshop | Opdracht 1</h1>
 
-                            </div>
+        <div class="container bg-light rounded p-4 pb-3 shadow mt-8">
+            <div class="row">
+                <div class="col-md-12">
+                    <form class="d-flex">
+                        <input id="newTask" type="text" class="form-control add-task" placeholder="New Task...">
+                        <button class="btn btn-primary" type="button" onclick="addItem()">Add Task</button>
+                    </form>
+                    <div class="todo-list">
+                        <div class="todo-item">
+
                         </div>
                     </div>
                 </div>

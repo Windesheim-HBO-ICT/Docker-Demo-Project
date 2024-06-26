@@ -27,27 +27,7 @@ body{
     padding: 15px;
     margin: 5px 0;
     border-radius: 0;
-    background: #f7f7f7
-}
-
-.todo-list.only-active .todo-item.complete {
-    display: none
-}
-
-.todo-list.only-active .todo-item:not(.complete) {
-    display: block
-}
-
-.todo-list.only-complete .todo-item:not(.complete) {
-    display: none
-}
-
-.todo-list.only-complete .todo-item.complete {
-    display: block
-}
-
-.todo-list .todo-item.complete span {
-    text-decoration: line-through
+    background: #fff;
 }
 
 .remove-todo-item {
@@ -89,13 +69,6 @@ div.checker, div.radio, div.uploader {
 div.button, div.button *, div.checker, div.checker *, div.radio, div.radio *, div.selector, div.selector *, div.uploader, div.uploader * {
     margin: 0;
     padding: 0;
-}
-
-div.button, div.checker, div.radio, div.selector, div.uploader {
-    display: -moz-inline-box;
-    display: inline-block;
-    zoom: 1;
-    vertical-align: middle;
 }
 
 .card {
