@@ -4,7 +4,7 @@ function addItem() {
         return;
     }
 
-    fetch('http://localhost:8080/api/Items', {
+    fetch('http://localhost:5080/api/Items', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -26,7 +26,7 @@ function addItem() {
 
 // Update item on the server
 function updateItem(id) {
-    fetch(`http://localhost:8080/api/Items/${id}`, {
+    fetch(`http://localhost:5080/api/Items/${id}`, {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json'
@@ -47,7 +47,7 @@ function updateItem(id) {
 
 // Delete item from the server
 function deleteItem(id) {
-    fetch(`http://localhost:8080/api/Items/${id}`, {
+    fetch(`http://localhost:5080/api/Items/${id}`, {
         method: 'DELETE'
     })
     .then(response => response.json())
@@ -63,7 +63,7 @@ $(document).ready(function() {
 
     // Fetch items from the server
     var fetchItems = function() {
-        fetch('http://localhost:8080/api/Items')
+        fetch('http://localhost:5080/api/Items')
             .then(response => response.json())
             .then(data => {
                 data.forEach(item => {
