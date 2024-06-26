@@ -1,7 +1,7 @@
 FROM nginx
 
 # copy app to nginx public folder
-COPY / /usr/share/nginx/html
+COPY /content /usr/share/nginx/html
 
 # copy custom nginx config
 COPY nginx.conf /etc/nginx/
