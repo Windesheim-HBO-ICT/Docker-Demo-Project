@@ -1,34 +1,31 @@
 version: "3.8"
+
 services:
-  chatterbox:
-    build:
-        context: ./chatterbox/chatterbox/
-        dockerfile: ./Dockerfile
-    ports:
-      - "6080:8080"
-      - "6081:8081"
+  db:
+    image: postgres
     restart: always
+    environment:
+      POSTGRES_PASSWORD: SuperVeiligWachtwoord123@!
+    volumes:
+      - ./database:/docker-entrypoint-initdb.d
+    ports:
+      - "5432:5432"
+
+  api:
+    # student uitwerking
+    ports:
+      - "5080:8080"
+      - "5081:8081"
+    # student uitwerking
+    depends_on:
+      - db
     develop:
       watch:
         - action: rebuild
-          path: ./chatterbox/
-    volumes:
-      - logs:/app/logs
-    user: root
-  loglens:
-    build:
-      context: ./loglens/loglens/
-      dockerfile: ./Dockerfile
-    ports:
-      - "7080:8080"
-      - "7081:8081"
-    restart: always
-    develop:
-      watch:
-        - action: rebuild
-          path: ./loglens/
-    volumes:
-      - logs:/app/logs
-    user: root
+          path: ./backend/
+
+  client:
+    # student uitwerking
+
 volumes:
-  logs: 
+  pgdata:
