@@ -12,8 +12,8 @@ WORKDIR /app
 # add app
 COPY . ./
 
-# open port 3050 for trafic
-EXPOSE 3050
+# open port 3080 for trafic
+EXPOSE 3080
 
 # start app
 CMD ["nginx", "-g", "daemon off;"]

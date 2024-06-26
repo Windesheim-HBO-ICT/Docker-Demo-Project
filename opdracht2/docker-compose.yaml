@@ -16,8 +16,8 @@ services:
         context: ./backend/backend/
         dockerfile: ./Dockerfile
     ports:
-      - "8080:8080"
-      - "8081:8081"
+      - "5080:8080"
+      - "5081:8081"
     restart: always
     depends_on:
       - db
@@ -31,7 +31,7 @@ services:
       context: ./frontend/
       dockerfile: ./Dockerfile
     ports:
-      - "3051:3051"
+      - "4080:4080"
     restart: always
     depends_on:
       - api
