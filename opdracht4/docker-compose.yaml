@@ -13,8 +13,4 @@ services:
       watch:
         - action: rebuild
           path: ./envviewer/
-    environment:
-      - Title=Docker Workshop | opdracht 4
-      - SubTitle=Deze waarde komt direct uit de docker-compose.yaml
-
-      - ConnectionString=Host=db;Port=5432;Database=dockerdemo;Username=postgres;Password=SuperVeiligWachtwoord123@!;
+    # student aanpassingen

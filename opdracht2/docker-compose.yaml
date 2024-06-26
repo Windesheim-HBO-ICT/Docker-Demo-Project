@@ -12,13 +12,11 @@ services:
       - "5432:5432"
 
   api:
-    build:
-        context: ./backend/backend/
-        dockerfile: ./Dockerfile
+    # student uitwerking
     ports:
       - "5080:8080"
       - "5081:8081"
-    restart: always
+    # student uitwerking
     depends_on:
       - db
     develop:
@@ -27,18 +25,7 @@ services:
           path: ./backend/
 
   client:
-    build:
-      context: ./frontend/
-      dockerfile: ./Dockerfile
-    ports:
-      - "4080:4080"
-    restart: always
-    depends_on:
-      - api
-    develop:
-      watch:
-        - action: rebuild
-          path: ./frontend/
+    # student uitwerking
 
 volumes:
   pgdata:
