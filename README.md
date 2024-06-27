@@ -1,6 +1,9 @@
 # Docker-Demo-Project
 Deze repository wordt gebruikt in de ondersteunende informatie in de Leertaken repository
 
+# Maken van studentversie
+`python parser.py -s -r uitwerkingen`
+
 # Opdracht 1
 ## Om het project te starten draai het volgende commando in de root van het project
 `docker build -t windesheim-docker-workshop-opdracht-1 .`
