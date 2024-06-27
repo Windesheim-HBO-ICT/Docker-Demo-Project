@@ -1,3 +1,4 @@
+#student-start
 FROM nginx
 
 # copy app to nginx public folder
@@ -17,3 +18,4 @@ EXPOSE 4080
 
 # start app
 CMD ["nginx", "-g", "daemon off;"]
+#student-end

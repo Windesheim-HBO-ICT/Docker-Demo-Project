@@ -13,7 +13,9 @@ services:
       watch:
         - action: rebuild
           path: ./envviewer/
+    #student-start
     environment:
       - Title=Docker Workshop | opdracht 4
       - SubTitle=Deze waarde komt direct uit de docker-compose.yaml
       - ConnectionString=DataSource=app.db;
+    #student-end
