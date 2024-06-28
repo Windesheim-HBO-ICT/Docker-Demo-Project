@@ -1,0 +1,21 @@
+version: "3.8"
+
+services:
+  envviewer:
+    build:
+        context: ./envviewer/envviewer/
+        dockerfile: ./Dockerfile
+    ports:
+      - "8080:8080"
+      - "8081:8081"
+    restart: always
+    develop:
+      watch:
+        - action: rebuild
+          path: ./envviewer/
+    #student-start
+    environment:
+      - Title=Docker Workshop | opdracht 4
+      - SubTitle=Deze waarde komt direct uit de docker-compose.yaml
+      - ConnectionString=DataSource=app.db;
+    #student-end

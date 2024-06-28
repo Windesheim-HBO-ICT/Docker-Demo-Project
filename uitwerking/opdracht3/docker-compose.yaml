@@ -1,0 +1,43 @@
+version: "3.8"
+
+services:
+  chatterbox:
+    build:
+        context: ./chatterbox/chatterbox/
+        dockerfile: ./Dockerfile
+    ports:
+      - "6080:8080"
+      - "6081:8081"
+    restart: always
+    develop:
+      watch:
+        - action: rebuild
+          path: ./chatterbox/
+    #student-start
+    volumes:
+      - logs:/app/logs
+    #student-end
+    user: root
+
+  loglens:
+    build:
+      context: ./loglens/loglens/
+      dockerfile: ./Dockerfile
+    ports:
+      - "7080:8080"
+      - "7081:8081"
+    restart: always
+    develop:
+      watch:
+        - action: rebuild
+          path: ./loglens/
+    #student-start
+    volumes:
+      - logs:/app/logs
+    #student-end
+    user: root
+
+#student-start
+volumes:
+  logs: 
+#student-end

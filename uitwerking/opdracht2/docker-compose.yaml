@@ -1,0 +1,50 @@
+version: "3.8"
+
+services:
+  db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: SuperVeiligWachtwoord123@!
+    volumes:
+      - ./database:/docker-entrypoint-initdb.d
+    ports:
+      - "5432:5432"
+
+  api:
+    #student-start
+    build:
+        context: ./backend/backend/
+        dockerfile: ./Dockerfile
+    #student-end
+    ports:
+      - "5080:8080"
+      - "5081:8081"
+    #student-start
+    restart: always
+    #student-end
+    depends_on:
+      - db
+    develop:
+      watch:
+        - action: rebuild
+          path: ./backend/
+
+  client:
+    #student-start
+    build:
+      context: ./frontend/
+      dockerfile: ./Dockerfile
+    ports:
+      - "4080:4080"
+    restart: always
+    depends_on:
+      - api
+    develop:
+      watch:
+        - action: rebuild
+          path: ./frontend/
+    #student-end
+
+volumes:
+  pgdata:
