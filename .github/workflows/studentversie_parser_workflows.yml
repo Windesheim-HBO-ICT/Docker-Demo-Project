@@ -1,0 +1,35 @@
+name: Run the student uitwerking parser and create PR
+
+on:
+  push:
+    branches:
+      - Uitwerkingen
+
+jobs:
+  run-parser-and-create-pr:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+
+      - name: Run studentversie_parser.py script
+        run: |
+          python .github/studentversie_parser.py -s
+
+      - name: Create Pull Request to main
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: Update studentversie
+          title: "Update main with changes from Uitwerkingen"
+          body: "This PR includes updates from the Uitwerkingen branch."
+          branch: "Uitwerkingen-to-main-pr"
+          base: "main"
+          delete-branch: true
+          labels: |
+            automated-pr
