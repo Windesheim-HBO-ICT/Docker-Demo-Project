@@ -17,9 +17,9 @@ jobs:
         with:
           python-version: '3.x'
 
-      - name: Run parser.py script
+      - name: Run studentversie_parser.py script
         run: |
-          python parser.py -s
+          python studentversie_parser.py -s
 
       - name: Create Pull Request to main
         uses: peter-evans/create-pull-request@v6
