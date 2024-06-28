@@ -19,7 +19,7 @@ jobs:
 
       - name: Run studentversie_parser.py script
         run: |
-          python studentversie_parser.py -s
+          python .github/studentversie_parser.py -s
 
       - name: Create Pull Request to main
         uses: peter-evans/create-pull-request@v6
