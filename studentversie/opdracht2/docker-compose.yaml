@@ -16,7 +16,6 @@ services:
     ports:
       - "5080:8080"
       - "5081:8081"
-#student uitwerking
     depends_on:
       - db
     develop:
