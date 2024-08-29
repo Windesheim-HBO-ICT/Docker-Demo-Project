@@ -34,6 +34,7 @@ namespace chatterbox.Controllers {
                 foreach (string entry in logEntries) {
                     string[] parts = entry.Split(new[] { ": " }, 2, StringSplitOptions.None);
 
+                    // Ensure the entry has the correct format
                     if (parts.Length == 2) {
                         messages.Add(new Message {
                             CreatedAt = DateTime.Parse(parts[0]),
@@ -64,6 +65,7 @@ namespace chatterbox.Controllers {
                 streamWriter.WriteLine($"{DateTime.Now}: {body}");
             }
 
+            // Send the user back to the index page to reload the messages
             return RedirectToAction("Index", "Home");
         }
     }
