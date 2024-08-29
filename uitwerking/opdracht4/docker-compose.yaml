@@ -19,7 +19,3 @@ services:
       - SubTitle=Deze waarde komt direct uit de docker-compose.yaml
       - ConnectionString=DataSource=app.db;
     #student-end
-    #student-start
-    ## Dit is een comment 
-    #student-end
-    
