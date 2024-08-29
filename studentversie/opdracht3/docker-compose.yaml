@@ -13,7 +13,8 @@ services:
       watch:
         - action: rebuild
           path: ./chatterbox/
-#student uitwerking
+    volumes:
+      - logs:/app/logs
     user: root
 
   loglens:
@@ -28,7 +29,9 @@ services:
       watch:
         - action: rebuild
           path: ./loglens/
-#student uitwerking
+    volumes:
+      - logs:/app/logs
     user: root
 
-#student uitwerking
+volumes:
+  logs: 
