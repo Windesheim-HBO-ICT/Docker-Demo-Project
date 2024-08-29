@@ -16,13 +16,11 @@ services:
     build:
         context: ./backend/backend/
         dockerfile: ./Dockerfile
+    restart: always
     #student-end
     ports:
       - "5080:8080"
       - "5081:8081"
-    #student-start
-    restart: always
-    #student-end
     depends_on:
       - db
     develop:
