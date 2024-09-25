@@ -15,7 +15,7 @@ services:
           path: ./chatterbox/
     #student-start
     volumes:
-      - logs:/app/logs
+      - files:/app/files
     #student-end
     user: root
 
@@ -33,11 +33,11 @@ services:
           path: ./loglens/
     #student-start
     volumes:
-      - logs:/app/logs
+      - files:/app/files
     #student-end
     user: root
 
 #student-start
 volumes:
-  logs: 
+  files: 
 #student-end

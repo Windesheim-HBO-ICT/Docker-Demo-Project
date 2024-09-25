@@ -1,5 +1,5 @@
 # Docker-Demo-Project
-Deze repository wordt gebruikt in de ondersteunende informatie in de Leertaken repository
+Deze repository wordt gebruikt in de workshop Docker. Deze workshop is te vinden in de Leerlijn-SE wiki.
 
 # Maken van studentversie
 `python parser.py -s -r uitwerkingen`
