@@ -1,10 +1,11 @@
-﻿@{
-    ViewData["Title"] = @ViewBag.Title;
+﻿@model HomeModel
+@{
+    ViewData["Title"] = @Model.Title;
 }
 
 <div class="text-center">
-    <h1 class="display-4">@ViewBag.Title</h1>
-    <h2 class="display-8">@ViewBag.SubTitle</h2>
+    <h1 class="display-4">@Model.Title</h1>
+    <h2 class="display-8">@Model.SubTitle</h2>
 
-    <p>@ViewBag.ConnectionString</p>
+    <p>@Model.ConnectionString</p>
 </div>
