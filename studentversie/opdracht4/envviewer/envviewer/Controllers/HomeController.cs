@@ -11,11 +11,12 @@ namespace envviewer.Controllers {
         }
 
         public IActionResult Index() {
-            ViewBag.Title = Environment.GetEnvironmentVariable("Title");
-            ViewBag.SubTitle = Environment.GetEnvironmentVariable("SubTitle");
-            ViewBag.ConnectionString = Environment.GetEnvironmentVariable("ConnectionString");
+            HomeModel model = new HomeModel();
+            model.Title = Environment.GetEnvironmentVariable("Title");
+            model.SubTitle = Environment.GetEnvironmentVariable("SubTitle");
+            model.ConnectionString = Environment.GetEnvironmentVariable("ConnectionString");
 
-            return View();
+            return View(model);
         }
 
         public IActionResult Privacy() {
