@@ -17,7 +17,7 @@ namespace chatterbox.Controllers {
                 Directory.CreateDirectory(directoryPath);
             }
 
-            // Create the log file if it doesn't exist
+            // Create the message file if it doesn't exist
             if (!System.IO.File.Exists(messageFilePath)) {
                 System.IO.File.Create(messageFilePath).Close();
             }
@@ -28,7 +28,7 @@ namespace chatterbox.Controllers {
 
             string directoryPath = Path.GetDirectoryName(messageFilePath);
             if (Directory.Exists(directoryPath)) {
-                // Read all lines from the log file
+                // Read all lines from the message file
                 string[] messageEntries = System.IO.File.ReadAllLines(messageFilePath);
 
                 foreach (string entry in messageEntries) {
@@ -59,7 +59,7 @@ namespace chatterbox.Controllers {
                 Directory.CreateDirectory(directoryPath);
             }
 
-            // Append the message to the log file
+            // Append the message to the file
             using (StreamWriter streamWriter = new StreamWriter(messageFilePath, true)) {
                 streamWriter.WriteLine($"{DateTime.Now}: {body}");
             }
