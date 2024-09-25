@@ -17,7 +17,7 @@ namespace loglens.Controllers {
                 Directory.CreateDirectory(directoryPath);
             }
 
-            // Create the log file if it doesn't exist
+            // Create the message file if it doesn't exist
             if (!System.IO.File.Exists(messageFilePath)) {
                 System.IO.File.Create(messageFilePath).Close();
             }
@@ -28,7 +28,7 @@ namespace loglens.Controllers {
 
             string directoryPath = Path.GetDirectoryName(messageFilePath);
             if (Directory.Exists(directoryPath)) {
-                // Read all lines from the log file
+                // Read all lines from the message file
                 string[] messageEntries = System.IO.File.ReadAllLines(messageFilePath);
 
                 foreach (string entry in messageEntries) {
